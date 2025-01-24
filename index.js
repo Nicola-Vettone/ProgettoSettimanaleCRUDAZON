@@ -73,22 +73,12 @@ function loadProducts(products) {
 
     // Pulsante Modifica DA METTERE IN BACKOFFICE </span><a href="./details.html?appId=${app._id}"
     const button = document.createElement("a");
-    button.innerHTML = `<a href="./details.html">Dettagli</a>`;
+    button.innerHTML = `</span><a href="./details.html?appId=${product._id}">Dettagli</a>`;
     button.classList.add("btn", "btn-sm", "btn-outline-secondary");
     divBtn.appendChild(button);
 
     button.addEventListener("click", () => {
       console.log("mod", product._id);
-    });
-
-    // Pulsante Elimina DA METTERE IN BACKOFFICE
-    const button2 = document.createElement("a");
-    button2.innerText = "Elimina";
-    button2.classList.add("btn", "btn-sm", "btn-outline-secondary");
-    divBtn.appendChild(button2);
-
-    button2.addEventListener("click", () => {
-      console.log("Elimina", product._id);
     });
 
     // Aggiungi la colonna alla riga
