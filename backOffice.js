@@ -25,11 +25,17 @@ form.onsubmit = function (event) {
     },
 
     body: JSON.stringify(newProduct),
-  }).then((response) => {
-    if (response.ok) {
-      return response.json();
-    } else {
-      console.error("Errore nel recupero dei prodotti:", response.status);
-    }
-  });
-};
+  })
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        console.error("Errore nel recupero dei prodotti:", response.status);
+      }
+      form.reset();
+    })
+    .then((data) => {
+      console.log("Risposta del server:", data);
+      form.reset();
+    });
+}.catch((error) => console.error("Errore:", error));

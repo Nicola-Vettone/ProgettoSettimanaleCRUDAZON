@@ -83,12 +83,3 @@ fetch(URL + productId, {
     cardProduct.appendChild(col);
   })
   .catch((err) => console.log(err));
-/* Pulsante Elimina DA METTERE IN BACKOFFICE
-const button2 = document.createElement("a");
-button2.innerText = "Elimina";
-button2.classList.add("btn", "btn-sm", "btn-outline-secondary");
-divBtn.appendChild(button2);
-
-button2.addEventListener("click", () => {
-  console.log("Elimina", product._id);
-});*/

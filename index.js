@@ -62,6 +62,12 @@ function loadProducts(products) {
     descr.innerHTML = product.description;
     cardBody.appendChild(descr);
 
+    // Aggiunta della descrizione
+    const price = document.createElement("p");
+    price.classList.add("card-text");
+    price.innerHTML = product.price + "€";
+    cardBody.appendChild(price);
+
     // Creazione dei pulsanti
     const dFlex = document.createElement("div");
     dFlex.classList.add("d-flex", "justify-content-between", "align-items-center");
