@@ -40,7 +40,7 @@ function loadProducts(products) {
 
     // Aggiunta dell'immagine
     const img = document.createElement("img");
-    img.classList.add("bd-placeholder-img", "card-img-top");
+    img.classList.add("bd-placeholder-img", "card-img-top", "altezza");
     img.src = product.imageUrl; // Imposta il percorso dell'immagine
     img.alt = product.name; // Imposta l'alt
     card.appendChild(img);

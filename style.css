@@ -4,3 +4,8 @@ div img {
 a {
   text-decoration: none;
 }
+.altezza {
+  max-width: 100%;
+  height: 300px;
+  object-fit: contain;
+}
