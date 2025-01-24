@@ -3,7 +3,7 @@ const row = document.querySelector("#productsRow");
 
 const token =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzkzNWIxMWI3NDcwMTAwMTU4YjJhZjYiLCJpYXQiOjE3Mzc3MTAzNTQsImV4cCI6MTczODkxOTk1NH0.1-0K95oHDGWa6RVnpJ4nP28N6kTtpBIWvhEbd2etRIo";
-fetch("https://striveschool-api.herokuapp.com/api/product/", {
+fetch(URL, {
   method: "GET",
   headers: {
     "Content-Type": "application/json",
@@ -78,17 +78,17 @@ function loadProducts(products) {
     divBtn.appendChild(button);
 
     button.addEventListener("click", () => {
-      console.log("Modifica", product.id);
+      console.log("Modifica", product._id);
     });
 
-    // Pulsante Elimina
+    // Pulsante Elimina DA METTERE IN BACKOFFICE
     const button2 = document.createElement("a");
     button2.innerText = "Elimina";
     button2.classList.add("btn", "btn-sm", "btn-outline-secondary");
     divBtn.appendChild(button2);
 
     button2.addEventListener("click", () => {
-      console.log("Elimina", product.id);
+      console.log("Elimina", product._id);
     });
 
     // Aggiungi la colonna alla riga
