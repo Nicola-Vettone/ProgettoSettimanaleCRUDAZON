@@ -74,6 +74,10 @@ fetch(URL + productId, {
     delete1.classList.add("btn", "btn-danger", "btn-sm");
     delete1.innerHTML = "Elimina";
 
+    delete1.addEventListener("click", () => {
+      console.log("Elimina", product._id);
+    });
+
     div2.appendChild(delete1);
 
     cardProduct.appendChild(col);
