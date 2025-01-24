@@ -75,7 +75,7 @@ fetch(URL + productId, {
     delete1.innerHTML = "Elimina";
 
     delete1.addEventListener("click", () => {
-      console.log("Elimina", product._id);
+      deleteProduct();
     });
 
     div2.appendChild(delete1);
@@ -83,3 +83,28 @@ fetch(URL + productId, {
     cardProduct.appendChild(col);
   })
   .catch((err) => console.log(err));
+
+const deleteProduct = () => {
+  const hasConfirmed = confirm("Conferma per eliminare il prodotto");
+
+  if (hasConfirmed) {
+    fetch(URL + productId, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
+      },
+    })
+      .then((resp) => {
+        if (resp.ok) {
+          return resp.json();
+        }
+      })
+      .then((deletedProd) => {
+        alert("Abbiamo eliminato " + deletedProd.name + " con id " + deletedProd._id);
+
+        window.location.assign("./index.html");
+      })
+      .catch((err) => console.log(err));
+  }
+};
