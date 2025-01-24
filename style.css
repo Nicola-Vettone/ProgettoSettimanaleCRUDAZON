@@ -1,3 +1,6 @@
 div img {
   width: 60px;
 }
+a {
+  text-decoration: none;
+}

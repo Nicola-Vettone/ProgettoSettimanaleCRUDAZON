@@ -18,6 +18,7 @@ fetch(URL + productId, {
     }
   })
   .then((product) => {
+    //Creo i singoli elementi di una card
     const cardProduct = document.getElementById("productsRow");
 
     const col = document.createElement("div");
@@ -66,14 +67,14 @@ fetch(URL + productId, {
 
     const mod = document.createElement("button");
     mod.classList.add("btn", "btn-primary", "btn-sm");
-    mod.innerHTML = "Modifica";
+    mod.innerHTML = `<a href="./backoffice.html?appId=${productId}" class="text-white">Modifica</a>`;
 
     div2.appendChild(mod);
 
     const delete1 = document.createElement("button");
-    delete1.classList.add("btn", "btn-danger", "btn-sm");
-    delete1.innerHTML = "Elimina";
-
+    delete1.classList.add("btn", "btn-danger", "btn-sm", "ms-2");
+    delete1.innerHTML = `<i class="bi bi-trash-fill"></i>`;
+    //Evento che richiamare la funzione per DELETE
     delete1.addEventListener("click", () => {
       deleteProduct();
     });
@@ -83,7 +84,7 @@ fetch(URL + productId, {
     cardProduct.appendChild(col);
   })
   .catch((err) => console.log(err));
-
+//Funzione per DELETE
 const deleteProduct = () => {
   const hasConfirmed = confirm("Conferma per eliminare il prodotto");
 
@@ -101,7 +102,7 @@ const deleteProduct = () => {
         }
       })
       .then((deletedProd) => {
-        alert("Abbiamo eliminato " + deletedProd.name + " con id " + deletedProd._id);
+        alert("Hai eliminato " + deletedProd.name + " con id " + deletedProd._id);
 
         window.location.assign("./index.html");
       })

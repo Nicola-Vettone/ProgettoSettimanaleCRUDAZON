@@ -77,7 +77,7 @@ function loadProducts(products) {
     divBtn.classList.add("btn-group");
     dFlex.appendChild(divBtn);
 
-    // Pulsante Modifica DA METTERE IN BACKOFFICE </span><a href="./details.html?appId=${app._id}"
+    // Pulsante Modifica DA METTERE IN BACKOFFICE
     const button = document.createElement("a");
     button.innerHTML = `</span><a href="./details.html?appId=${product._id}">Dettagli</a>`;
     button.classList.add("btn", "btn-sm", "btn-outline-secondary");
