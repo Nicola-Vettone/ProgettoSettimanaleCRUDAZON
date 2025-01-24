@@ -37,5 +37,6 @@ form.onsubmit = function (event) {
     .then((data) => {
       console.log("Risposta del server:", data);
       form.reset();
-    });
-}.catch((error) => console.error("Errore:", error));
+    })
+    .catch((error) => console.error("Errore:", error)); // .catch correttamente qui
+};
