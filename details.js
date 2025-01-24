@@ -19,27 +19,63 @@ fetch(URL + productId, {
   })
   .then((product) => {
     const cardProduct = document.getElementById("productsRow");
+
     const col = document.createElement("div");
     col.classList.add("col");
 
-    col.innerHTML = `
-        <div class="card">
-        <img
-          src="${product.imageUrl}"
-          class="card-img-top"
-          alt="SmartPhone Image"
-        />
-        <div class="card-body">
-          <h5 class="card-title">${product.name}</h5>
-          <p class="card-text"><strong>Brand:</strong> ${product.brand}</p>
-          <p class="card-text"><strong>Specifiche:</strong> ${product.description}</p>
-          <p class="card-text"><strong>Prezzo:</strong> ${product.price}€</p>
-          <button type="button" class="btn btn-primary btn-sm">Modifica</button>
-          <button type="button" class="btn btn-danger btn-sm"">Elimina</button>
-        </div>
-      </div>
-      
-        `;
+    const div = document.createElement("div");
+    div.classList.add("card");
+
+    col.appendChild(div);
+
+    const img = document.createElement("img");
+    img.classList.add("card-img-top");
+
+    img.src = product.imageUrl;
+
+    div.appendChild(img);
+
+    const div2 = document.createElement("div");
+    div2.classList.add("card-body");
+
+    div.appendChild(div2);
+
+    const name = document.createElement("h5");
+    name.classList.add("card-title");
+    name.innerHTML = product.name;
+
+    div2.appendChild(name);
+
+    const p1 = document.createElement("p");
+    p1.classList.add("card-text");
+    p1.innerHTML = `<strong>Brand:</strong> ${product.brand}`;
+
+    div2.appendChild(p1);
+
+    const p2 = document.createElement("p");
+    p2.classList.add("card-text");
+    p2.innerHTML = `<strong>Specifiche:</strong> ${product.description}`;
+
+    div2.appendChild(p2);
+
+    const p3 = document.createElement("p");
+    p3.classList.add("card-text");
+    p3.innerHTML = `<strong>Prezzo:</strong> ${product.price}€`;
+
+    div2.appendChild(p3);
+
+    const mod = document.createElement("button");
+    mod.classList.add("btn", "btn-primary", "btn-sm");
+    mod.innerHTML = "Modifica";
+
+    div2.appendChild(mod);
+
+    const delete1 = document.createElement("button");
+    delete1.classList.add("btn", "btn-danger", "btn-sm");
+    delete1.innerHTML = "Elimina";
+
+    div2.appendChild(delete1);
+
     cardProduct.appendChild(col);
   })
   .catch((err) => console.log(err));
