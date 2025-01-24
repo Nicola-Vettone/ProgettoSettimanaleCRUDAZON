@@ -71,14 +71,14 @@ function loadProducts(products) {
     divBtn.classList.add("btn-group");
     dFlex.appendChild(divBtn);
 
-    // Pulsante Modifica
+    // Pulsante Modifica DA METTERE IN BACKOFFICE </span><a href="./details.html?appId=${app._id}"
     const button = document.createElement("a");
-    button.innerText = "Modifica";
+    button.innerHTML = `<a href="./details.html">Dettagli</a>`;
     button.classList.add("btn", "btn-sm", "btn-outline-secondary");
     divBtn.appendChild(button);
 
     button.addEventListener("click", () => {
-      console.log("Modifica", product._id);
+      console.log("mod", product._id);
     });
 
     // Pulsante Elimina DA METTERE IN BACKOFFICE
