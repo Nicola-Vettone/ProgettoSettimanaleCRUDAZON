@@ -35,7 +35,7 @@ function loadProducts(products) {
 
     // Creazione della card
     const card = document.createElement("div");
-    card.classList.add("card", "mb-4", "shadow-sm");
+    card.classList.add("card", "mb-4", "shadow-sm", "h-100");
     col.appendChild(card);
 
     // Aggiunta dell'immagine
@@ -47,7 +47,7 @@ function loadProducts(products) {
 
     // Creazione del body della card
     const cardBody = document.createElement("div");
-    cardBody.classList.add("card-body");
+    cardBody.classList.add("card-body", "d-flex", "flex-column");
     card.appendChild(cardBody);
 
     // Aggiunta del titolo
@@ -70,7 +70,7 @@ function loadProducts(products) {
 
     // Creazione dei pulsanti
     const dFlex = document.createElement("div");
-    dFlex.classList.add("d-flex", "justify-content-between", "align-items-center");
+    dFlex.classList.add("d-flex", "justify-content-between", "align-items-center", "mt-auto");
     cardBody.appendChild(dFlex);
 
     const divBtn = document.createElement("div");
