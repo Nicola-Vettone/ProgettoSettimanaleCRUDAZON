@@ -12,8 +12,9 @@ const modProduct = document.querySelector(".modifica");
 window.addEventListener("DOMContentLoaded", () => {
   //Se è presente productId allora siamo in put
   if (productId) {
-    modProduct.innerText = "Modifica prodotto";
-    modProduct.classList.add("btn-success");
+    inserisci.value = "Modifica";
+    inserisci.classList.add("btn-success");
+    h1.innerHTML = "Modifica i prodotto";
 
     fetch(URL, {
       method: "GET",
@@ -62,6 +63,7 @@ form.onsubmit = function (event) {
   const methods = productId ? "PUT" : "POST";
   const requestUrl = productId ? "https://striveschool-api.herokuapp.com/api/product/" + productId : "https://striveschool-api.herokuapp.com/api/product/";
   const hasConfirmed = confirm("Conferma per modificare il prodotto");
+  const h1 = document.querySelector("#h1");
 
   if (hasConfirmed) {
     fetch(requestUrl, {
