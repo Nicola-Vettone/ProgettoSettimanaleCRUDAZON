@@ -69,12 +69,12 @@ function loadProducts(products) {
 
     // Aggiunta del prezzo
     const price = document.createElement("p");
-    price.classList.add("card-text", "fw-bold", "me-auto");
+    price.classList.add("card-text", "fw-bold", "me-auto", "price");
     price.innerHTML = product.price + "€";
     dFlex.appendChild(price);
 
     const divBtn = document.createElement("div");
-    divBtn.classList.add("btn-group", "d-flex");
+    divBtn.classList.add("btn-group", "d-flex", "mb-auto");
     dFlex.appendChild(divBtn);
 
     // Pulsante Modifica DA METTERE IN BACKOFFICE
