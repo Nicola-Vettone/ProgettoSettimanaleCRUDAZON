@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded", () => {
   if (productId) {
     inserisci.value = "Modifica";
     inserisci.classList.add("btn-success");
-    h1.innerHTML = "Modifica i prodotto";
+    h1.innerHTML = "Modifica il prodotto:";
 
     fetch(URL, {
       method: "GET",
