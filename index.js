@@ -62,25 +62,25 @@ function loadProducts(products) {
     descr.innerHTML = product.description;
     cardBody.appendChild(descr);
 
-    // Aggiunta della descrizione
-    const price = document.createElement("p");
-    price.classList.add("card-text", "fw-bold");
-    price.innerHTML = product.price + "€";
-    cardBody.appendChild(price);
-
     // Creazione dei pulsanti
     const dFlex = document.createElement("div");
-    dFlex.classList.add("d-flex", "justify-content-between", "align-items-center", "mt-auto");
+    dFlex.classList.add("d-flex", "mt-auto");
     cardBody.appendChild(dFlex);
 
+    // Aggiunta del prezzo
+    const price = document.createElement("p");
+    price.classList.add("card-text", "fw-bold", "me-auto");
+    price.innerHTML = product.price + "€";
+    dFlex.appendChild(price);
+
     const divBtn = document.createElement("div");
-    divBtn.classList.add("btn-group");
+    divBtn.classList.add("btn-group", "d-flex");
     dFlex.appendChild(divBtn);
 
     // Pulsante Modifica DA METTERE IN BACKOFFICE
     const button = document.createElement("a");
     button.innerHTML = `</span><a href="./details.html?appId=${product._id}">Dettagli</a>`;
-    button.classList.add("btn", "btn-sm", "btn-outline-secondary");
+    button.classList.add("btn", "btn-outline-secondary");
     divBtn.appendChild(button);
 
     button.addEventListener("click", () => {
