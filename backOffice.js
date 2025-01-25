@@ -62,10 +62,10 @@ form.onsubmit = function (event) {
   //Usiamo put o post
   const methods = productId ? "PUT" : "POST";
   const requestUrl = productId ? "https://striveschool-api.herokuapp.com/api/product/" + productId : "https://striveschool-api.herokuapp.com/api/product/";
-  const hasConfirmed = confirm("Conferma per modificare il prodotto");
+  const hasConfirmed = confirm("Conferma per continuare");
   const h1 = document.querySelector("#h1");
 
-  if (hasConfirmed) {
+  if (hasConfirmed && methods === "PUT") {
     fetch(requestUrl, {
       method: methods,
       headers: {
@@ -84,6 +84,28 @@ form.onsubmit = function (event) {
       .then((modifica) => {
         alert("Hai modificato " + modifica.name + " con id " + modifica._id);
         alert("Modifica del prodotto " + modifica.name + " avvenuta con successo");
+        form.reset();
+      })
+      .catch((error) => console.error("Errore:", error));
+  } else {
+    fetch(requestUrl, {
+      method: methods,
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + token,
+      },
+      body: JSON.stringify(newProduct),
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error("Errore nel salvataggio del prodotto");
+        }
+      })
+      .then((prodotto) => {
+        alert("Hai aggiunto " + prodotto.name + " con id " + prodotto._id);
+        alert("Aggiunta del prodotto " + prodotto.name + " avvenuta con successo");
         form.reset();
       })
       .catch((error) => console.error("Errore:", error));

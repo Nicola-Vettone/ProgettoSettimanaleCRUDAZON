@@ -31,16 +31,16 @@ function loadProducts(products) {
   products.forEach((product) => {
     // Creazione della colonna
     const col = document.createElement("div");
-    col.classList.add("col-md-4");
+    col.classList.add("col-md-4", "mb-2");
 
     // Creazione della card
     const card = document.createElement("div");
-    card.classList.add("card", "mb-4", "shadow-sm", "h-100");
+    card.classList.add("card", "mb-4", "shadow-sm", "h-100", "shadow-lg", "p-3", "rounded");
     col.appendChild(card);
 
     // Aggiunta dell'immagine
     const img = document.createElement("img");
-    img.classList.add("bd-placeholder-img", "card-img-top", "altezza");
+    img.classList.add("bd-placeholder-img", "card-img-top", "altezza", "shadow-lg", "p-3", "rounded");
     img.src = product.imageUrl; // Imposta il percorso dell'immagine
     img.alt = product.name; // Imposta l'alt
     card.appendChild(img);
@@ -64,7 +64,7 @@ function loadProducts(products) {
 
     // Aggiunta della descrizione
     const price = document.createElement("p");
-    price.classList.add("card-text");
+    price.classList.add("card-text", "fw-bold");
     price.innerHTML = product.price + "€";
     cardBody.appendChild(price);
 
